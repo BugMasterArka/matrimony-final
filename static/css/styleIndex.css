@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+@keyframes makeBlur {
+    from {
+        backdrop-filter: none;
+    }
+    to {
+        backdrop-filter: blur(10px);
+    }
+}
+
+@keyframes hop {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes colorChange {
+    from {
+        background-color: rgba(0, 0, 0, 0.0);
+        color: black;
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+}
+
+@keyframes changeMenuItem {
+    from {
+        color: white;
+        font-size: 2rem;
+    }
+    to {
+        background: linear-gradient( rgba(58, 255, 189, 1) 0%, rgba(10, 114, 181, 1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.5rem;
+    }
+}
+
+@keyframes changeBack {
+    from {
+        background-color: rgb(250, 247, 247);
+        background-image: none;
+    }
+    to {
+        background-image: linear-gradient(to right, #43088b 10%, #30CFD0 100%);
+    }
+}
+
+@keyframes increase {
+    from{
+        width: 10vw;
+        height: 3.5vh;
+        background-color: rgba(57,215,154,0.8);
+        color: white;
+    }
+    to{
+        width: 12vw;
+        height: 5.5vh;
+        background-color: white;
+        color: rgba(57,215,154,0.8);
+        font-weight: bold;
+    }
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh 0.5vw;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 52%, rgba(0, 0, 0, 0) 100%);
+}
+
+.logo img {
+    height: 7.5vh;
+    border-radius: 0 15px 15px 0;
+    margin: 0 0 0 -30px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 2vw 0 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a {
+    text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    font-size: 2rem;
+}
+
+.menu li a:hover {
+    animation: changeMenuItem;
+    animation-duration: 0.2s;
+    background: linear-gradient( rgba(58, 255, 189, 1) 0%, rgba(10, 114, 181, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+}
+
+#main{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 70vh;
+    width: 100vw;
+    /* background-image: url('../images/mainBack.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+#main .pic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main .pic img{
+    margin-top: 30px;
+    height: 70vh;
+
+}
+
+.uploader{
+    /* min-height: 70vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#upload-file{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height:30vh;
+    border-radius: 20px;
+    min-width: 18vw;
+    padding: 15px;
+    background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA  51%, #77A1D3  100%);
+    margin: 10px;
+    padding: 15px 5px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+
+form:hover{
+    background-position: right center;
+    color: #fff;
+}
+
+#ip1, #ip2{
+    border: none;
+    border-radius: 20px;
+    height: 3.5vh;
+    width: 14vw;
+    padding: 0 0 0 10px;
+}
+
+#ip1, #ip2, #ip3{
+    margin: 20px 0;
+}
+
+input[type="file"]::file-selector-button {
+    margin-left: 15px;
+    text-align: center;
+    height: 5vh;
+    width: 6vw;
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+}
+input{
+    font-family: 'Raleway', sans-serif;
+}
+#sub{
+    margin-top: 2vh;
+    width: 10vw;
+    height: 3.5vh;
+    background-color: rgba(57,215,154,0.8);
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+#sub:hover{
+    animation-name: increase;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    width: 12vw;
+    height: 5.5vh;
+    background-color: white;
+    color: rgba(57,215,154,0.8);
+    font-weight: bold;
+}
